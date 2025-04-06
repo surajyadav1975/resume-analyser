@@ -1,13 +1,7 @@
 import spacy
 import re
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
-
+nlp = spacy.load("en_core_web_sm")
 
 def analyze_resume(text):
     doc = nlp(text.lower())
